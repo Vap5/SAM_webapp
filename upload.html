@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Segmentation - Upload</title>
+</head>
+<body>
+    <h2>Left image is source image and right image is segmented image in output shown.</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Upload & Process Image</button>
+    </form>
+
+    {% if image_data %}
+        <!-- Display the segmented image -->
+        <img src="data:image/png;base64, {{ image_data }}" alt="Segmented Image">
+    {% endif %}
+</body>
+</html>
