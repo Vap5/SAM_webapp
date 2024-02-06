@@ -83,7 +83,7 @@ def upload():
         roi_data = gui_queue.get()
 
         # Your Sam model and segmentation code here
-        sam_checkpoint = "C:\\Users\\patel\\Downloads\\sam_vit_h_4b8939.pth"
+        sam_checkpoint = "sam_vit_h_4b8939.pth"  # the model needs to be downloaded from Meta AI Segment Anything website before the use
         model_type = "vit_h"
         sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
         sam = sam.to('cuda')  # Move the model to the GPU
